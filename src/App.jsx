@@ -10,7 +10,20 @@ function App() {
     tasks: [],
   });
 
-  function handleAddTask() {}
+  function handleAddTask(text) {
+    setProjectState((prev) => {
+      console.log(prev);
+      const newTask = {
+        text: text,
+        projectId: prev.selectedProjectId,
+        id: Math.random(),
+      };
+      return {
+        ...prev,
+        tasks: [newTask, ...prev.tasks],
+      };
+    });
+  }
 
   function handleDeleteTask() {}
   function handleSelectProject(id) {
@@ -68,6 +81,7 @@ function App() {
       onDelete={handleDeleteProject}
       onAddTask={handleAddTask}
       onDeleteTask={handleDeleteTask}
+      tasks={projectState.tasks}
     />
   );
   if (projectState.selectedProjectId === null) {

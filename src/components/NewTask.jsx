@@ -1,14 +1,16 @@
 import { useState } from "react";
-export default function NewTask({ onAddTask, onDeleteTask }) {
+export default function NewTask({ tasks, onAddTask }) {
   const [enteredTask, setEnteredTask] = useState();
   function handleChange(event) {
     setEnteredTask(event.target.value);
   }
 
+  console.log(enteredTask);
+
   function handleClick() {
+    onAddTask(enteredTask);
     setEnteredTask("");
   }
-  console.log(enteredTask);
   return (
     <div className="flex items-center gap-4">
       <input

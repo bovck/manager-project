@@ -5,6 +5,7 @@ export default function SelectedProject({
   onDelete,
   onAddTask,
   onDeleteTask,
+  tasks,
 }) {
   console.log(project);
   const formattedDate = new Date(project.enteredDueDate).toLocaleDateString(
@@ -34,7 +35,7 @@ export default function SelectedProject({
           {project.enteredDescription}
         </p>
       </header>
-      <Tasks onAddTask={onAddTask} onDeleteTask={onDeleteTask} />
+      <Tasks onAddTask={onAddTask} onDeleteTask={onDeleteTask} tasks={tasks} />
     </div>
   );
 }
