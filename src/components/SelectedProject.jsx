@@ -7,7 +7,6 @@ export default function SelectedProject({
   onDeleteTask,
   tasks,
 }) {
-  console.log(project);
   const formattedDate = new Date(project.enteredDueDate).toLocaleDateString(
     "en-US",
     {
