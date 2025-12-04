@@ -9,7 +9,7 @@ function App() {
     projects: [],
     tasks: [],
   });
-
+  console.log("ola mundo");
   function handleAddTask(text) {
     setProjectState((prev) => {
       console.log(prev);
